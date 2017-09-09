@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PageNavigationDemo.Views.FirstPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Text to be sent to page 2"/>
+            <Editor Text="{Binding NavigationText}" FontSize="{Binding SliderValue}" TextColor="{Binding TextColour}"  VerticalOptions="FillAndExpand"/>
+            <Label Text="Font size to be sent to page 2"/>
+            <Entry Text="{Binding SliderValue, Mode=TwoWay}" Keyboard="Numeric"/>
+            <Slider Value="{Binding SliderValue, Mode=TwoWay}" Maximum="100" Minimum="5"/>
+            <Label Text="Font colour"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="R"/>
+                <!--note that maximum must be set before minimum https://bugzilla.xamarin.com/show_bug.cgi?id=21181-->
+                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Red}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="B"/>
+                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Blue}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="G"/>
+                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Green}"/>
+            </StackLayout>
+            <Button Text="Go To Second Page" Command="{Binding SecondPageCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
