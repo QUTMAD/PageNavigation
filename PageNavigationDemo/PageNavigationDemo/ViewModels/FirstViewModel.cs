@@ -33,7 +33,7 @@ namespace PageNavigationDemo.ViewModels
                 RaisePropertyChanged();
             }
         }
-        private int red = 255;
+        private int red = 0;
 
         public int Red
         {
@@ -46,7 +46,7 @@ namespace PageNavigationDemo.ViewModels
             }
         }
 
-        private int blue = 255;
+        private int blue = 0;
 
         public int Blue
         {
@@ -59,7 +59,7 @@ namespace PageNavigationDemo.ViewModels
             }
         }
 
-        private int green = 255;
+        private int green = 0;
 
         public int Green
         {
@@ -89,7 +89,7 @@ namespace PageNavigationDemo.ViewModels
         {
             SecondPageCommand = new Command(() =>
             {
-                NavigationService.Instance.PushAsync(new SecondViewModel(new Tuple<string, int>(NavigationText, SliderValue)));
+                NavigationService.Instance.PushAsync(new SecondViewModel(new Tuple<string, int, Color>(NavigationText, SliderValue, TextColour)));
             });
         }
 

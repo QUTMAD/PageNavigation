@@ -13,15 +13,15 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="R"/>
                 <!--note that maximum must be set before minimum https://bugzilla.xamarin.com/show_bug.cgi?id=21181-->
-                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Red}"/>
+                <Slider Maximum="255" Minimum="0" HorizontalOptions="FillAndExpand" Value="{Binding Red}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="B"/>
-                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Blue}"/>
+                <Slider Maximum="255" Minimum="0" HorizontalOptions="FillAndExpand" Value="{Binding Blue}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="G"/>
-                <Slider Maximum="255" Minimum="1" HorizontalOptions="FillAndExpand" Value="{Binding Green}"/>
+                <Slider Maximum="255" Minimum="0" HorizontalOptions="FillAndExpand" Value="{Binding Green}"/>
             </StackLayout>
             <Button Text="Go To Second Page" Command="{Binding SecondPageCommand}"/>
         </StackLayout>

@@ -16,6 +16,7 @@ namespace PageNavigationDemo.ViewModels
         {
             NavigationText = navParams.Item1;
             NavigationSize = navParams.Item2;
+            TextColour = navParams.Item3;
         }
         private string navigationText;
 
