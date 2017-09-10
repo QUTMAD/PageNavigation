@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PageNavigationDemo.ValueConverters;assembly=PageNavigationDemo"
              x:Class="PageNavigationDemo.Views.FirstPage">
-    <ContentPage.Content>
         <StackLayout>
-            <Label Text="Text to be sent to page 2"/>
-            <Editor Text="{Binding NavigationText}" FontSize="{Binding SliderValue}" TextColor="{Binding TextColour}"  VerticalOptions="FillAndExpand"/>
+            <Label Text="Enter some text number here"/>
+            <Entry Text="{Binding NavigationText}" FontSize="{Binding SliderValue}" 
+                   TextColor="{Binding TextColour}" VerticalOptions="FillAndExpand" />
             <Label Text="Font size to be sent to page 2"/>
             <Entry Text="{Binding SliderValue, Mode=TwoWay}" Keyboard="Numeric"/>
             <Slider Value="{Binding SliderValue, Mode=TwoWay}" Maximum="100" Minimum="5"/>
@@ -23,7 +24,11 @@
                 <Label Text="G"/>
                 <Slider Maximum="255" Minimum="0" HorizontalOptions="FillAndExpand" Value="{Binding Green}"/>
             </StackLayout>
-            <Button Text="Go To Second Page" Command="{Binding SecondPageCommand}"/>
-        </StackLayout>
-    </ContentPage.Content>
+            <Switch IsToggled="{Binding BoxChecked}"/>
+            <Button x:Name="SecondPageButton" Text="Go To Second Page" 
+                    Command="{Binding SecondPageCommand}"/>
+            <!--Uncomment for code behind page navigation-->
+            <!--Clicked="SecondPageButton_Clicked"/>-->
+
+    </StackLayout>
 </ContentPage>

@@ -12,11 +12,24 @@ namespace PageNavigationDemo.ViewModels
     {
         public SecondViewModel() { }
 
-        public SecondViewModel(Tuple<string,int, Color> navParams)
+        public SecondViewModel(Tuple<string,int, Color, bool> navParams)
         {
             NavigationText = navParams.Item1;
             NavigationSize = navParams.Item2;
             TextColour = navParams.Item3;
+            BoxChecked = navParams.Item4;
+        }
+
+        private bool boxChecked;
+
+        public bool BoxChecked
+        {
+            get { return boxChecked; }
+            set
+            {
+                boxChecked = value;
+                RaisePropertyChanged();
+            }
         }
         private string navigationText;
 

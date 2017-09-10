@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PageNavigationDemo.ValueConverters;assembly=PageNavigationDemo"
              x:Class="PageNavigationDemo.Views.SecondPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="FintSize" Text="{Binding NavigationText}" FontSize="{Binding NavigationSize}" TextColor="{Binding TextColour}"/>
+            <Label Text="Box was checked" IsVisible="{Binding BoxChecked}"/>
+            <Label Text="Box was not checked" IsVisible="{Binding BoxChecked, Converter={StaticResource InverseBooleanConverter}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -30,5 +30,15 @@ namespace PageNavigationDemo.Views
             var x = vm;
 
         }
+
+        private void SecondPageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SecondPage(
+                new Tuple<string, int, Color, bool>(
+                    vm.NavigationText,
+                    vm.SliderValue,
+                    vm.TextColour, 
+                    vm.BoxChecked)));
+        }
     }
 }

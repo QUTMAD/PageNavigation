@@ -11,6 +11,14 @@ namespace PageNavigationDemo.ViewModels
 {
     public class FirstViewModel : ViewModelBase, IViewModel
     {
+        private bool boxChecked;
+
+        public bool BoxChecked
+        {
+            get { return boxChecked; }
+            set { boxChecked = value; }
+        }
+
         private string navigationText;
 
         public string NavigationText
@@ -89,7 +97,7 @@ namespace PageNavigationDemo.ViewModels
         {
             SecondPageCommand = new Command(() =>
             {
-                NavigationService.Instance.PushAsync(new SecondViewModel(new Tuple<string, int, Color>(NavigationText, SliderValue, TextColour)));
+                NavigationService.Instance.PushAsync(new SecondViewModel(new Tuple<string, int, Color, bool>(NavigationText, SliderValue, TextColour, BoxChecked)));
             });
         }
 

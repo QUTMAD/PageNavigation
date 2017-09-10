@@ -19,6 +19,12 @@ namespace PageNavigationDemo.Views
             InitializeComponent();
         }
 
+        public SecondPage (Tuple<string, int, Color, bool> navParams)
+        {
+            BindingContext = new SecondViewModel(navParams);
+            InitializeComponent();
+        }
+
         SecondViewModel vm;
         public SecondViewModel ViewModel
         {
