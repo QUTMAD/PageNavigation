@@ -86,7 +86,7 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
-
+*Resource.Designer.cs
 # Visual Studio profiler
 *.psess
 *.vsp

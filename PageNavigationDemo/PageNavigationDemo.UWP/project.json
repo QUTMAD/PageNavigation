@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
     "CodeMill.VMFirstNav": "1.0.1.31",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
-    "Xamarin.Forms": "2.3.4.270"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Xamarin.Forms": "2.3.4.224"
   },
   "frameworks": {
     "uap10.0.10586": {}
